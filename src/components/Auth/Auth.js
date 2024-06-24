@@ -67,15 +67,16 @@ const SignUp = () => {
           <Grid container spacing={2}>
             { isSignup && (
             <>
-              <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half autoComplete="new-password" />
-              <Input name="lastName" label="Last Name" handleChange={handleChange} half autoComplete="new-password" />
+              <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half autoComplete="off" />
+              <Input name="lastName" label="Last Name" handleChange={handleChange} half autoComplete="off" />
             </>
             )}
-            <Input name="email" label="Email Address" handleChange={handleChange} type="email" autoComplete="new-password" />
+            <Input name="email" label="Email Address" handleChange={handleChange} type="email" autoComplete="off" />
             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
           </Grid>
           <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+              <input autoComplete="on" style={{ display: 'none' }} id="fake-hidden-input-to-stop-google-address-lookup">
             { isSignup ? 'Sign Up' : 'Sign In' }
           </Button>
           <GoogleLogin

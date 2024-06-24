@@ -67,11 +67,11 @@ const SignUp = () => {
           <Grid container spacing={2}>
             { isSignup && (
             <>
-              <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-              <Input name="lastName" label="Last Name" handleChange={handleChange} half />
+              <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half autocomplete = "off" />
+              <Input name="lastName" label="Last Name" handleChange={handleChange} half autocomplete = "off" />
             </>
             )}
-            <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
+            <Input name="email" label="Email Address" handleChange={handleChange} type="email" autocomplete = "off" />
             <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
           </Grid>
